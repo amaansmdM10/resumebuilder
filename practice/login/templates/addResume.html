@@ -1,0 +1,303 @@
+{% extends 'base.html' %}
+
+<!-- changing title of page -->
+
+{% block title %}
+Add Resume
+{% endblock title %}
+
+{% block body %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<div class="container py-3">
+    <div class="row border border-dark rounded shadow-lg">
+         <div class="col-12 py-3  text-light " style="background-color: #263238;">
+             <h1 class="text-center">REGISTARTION PAGE</h1>
+         </div>
+    </div>
+    {% for message in messages %}
+     <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+       {{message}}
+       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+     </div>
+     {% endfor %}
+ <form action="/addResume" method="post">
+     {% csrf_token %}
+    <div class="row border border-light rounded shadow-lg my-3" style=" background-color: hwb(200 96% 3%);">
+      
+         <div class="col-5">
+             <div>
+                 <h4 class="offset-1 pt-2" style="text-underline-position: under; color: #00838F; text-decoration:underline; text-decoration-thickness: 3px;"><b>PERSONAL DETAILS</b></h4>
+
+             </div>
+             <div class="offset-1 py-2">
+                 <input type="text" class="form-control mb-3" id="userid" name="userid" value="{{user.username}}"
+                     placeholder="Enter your resume byuilder user id" required>
+             </div>
+             <div class="offset-1 py-2">
+     
+                 <input type="text"  name="fname" class="form-control" placeholder="Enter first name ">
+             </div>
+             <div class="offset-1 py-2">
+     
+                 <input type="text"  name="lname" class="form-control" placeholder="Enter Last name ">
+             </div>
+             <div class="offset-1 py-2">
+     
+                 <input type="number"  name="number" class="form-control" placeholder="Enter Mobile Number ">
+             </div>
+             <div class="offset-1 py-2">
+     
+                 <input type="email"  name="mails" class="form-control" placeholder="Enter email ">
+             </div>
+             <div>
+                 <h4 class="offset-1 pt-2" style="text-underline-position: under; color: #00838F; text-decoration:underline; text-decoration-thickness: 3px;"><b>PROFILE LINKS</b></h4>
+             </div>
+             <div class="offset-1 py-2">
+                 <i class="fa-brands fa-github fa-lg"></i>
+                 <input type="url"  name="github" class="form-control" placeholder="Enter Github link ">
+             </div>
+             <div class="offset-1 py-2">
+                 <i class="fa-brands fa-linkedin fa-lg"></i>
+                 <input type="url"  name="linkedln" class="form-control" placeholder="Enter LinkedIn Link ">
+             </div>
+             <div>
+                 <h4 class="offset-1 pt-2" style="text-underline-position: under; color: #00838F; text-decoration:underline; text-decoration-thickness: 3px;"><b>EDUCATION DETAILS</b></h4>
+             </div>
+             
+             <div class="offset-1 py-2">
+                 <h6>School Name</h6>
+                 <input type="text"  name="secondary" class="form-control" placeholder="Enter school name ">
+             </div>
+             <div class="offset-1 py-2">
+                 <h6>Year Of Completion</h6>
+                 <input type="text"  name="sdate" class="form-control" placeholder="Enter date ">
+             </div>
+             <div class="offset-1 py-2">
+                 <h6>Intermediate College Name</h6>
+                 <input type="text"  name="intermediate" class="form-control" placeholder="Enter intermediate College name ">
+             </div>
+             <div class="offset-1 py-2">
+                 <h6>Year Of Start</h6>
+                 <input type="text"  name="interstart"  placeholder="Enter date ">
+             </div>
+             <div class="offset-1 py-2">
+                 <h6>Year Of Completion</h6>
+                 <input type="text"  name="interend"  placeholder="Enter date ">
+             </div>
+             <div class="offset-1 py-2">
+                 <h6>Degree College Name</h6>
+                 <input type="text"  name="degree" class="form-control" placeholder="Enter institution name ">
+             </div>
+             <div class="offset-1 py-2">
+                 <h6>Specialization</h6>
+                 <input type="text"  name="specialization" class="form-control" placeholder="Enter course name ">
+             </div>
+             <div class="offset-1 py-2">
+                 <h6>Year Of Start</h6>
+                 <input type="text"  name="dstart"  placeholder="Enter date ">
+             </div>
+             <div class="offset-1 py-2">
+                 <h6>Year Of Completion</h6>
+                 <input type="text"  name="dend"  placeholder="Enter date ">
+             </div>
+             <div>
+                 <h4 class="offset-1 pt-2" style="text-underline-position: under; color: #00838F; text-decoration:underline; text-decoration-thickness: 3px;"><b>SKILLS</b></h4>
+             </div>
+             <div class="offset-1 py-2">
+                 <ul class="text-dark">
+                     <li>
+                         <input type="text"  name="s11" class="form-control my-2" placeholder="Enter skill ">
+                     </li>
+                     <li>
+                         <input type="text"  name="s2" class="form-control my-2" placeholder="Enter skill ">
+                     </li>
+                     <li>
+                         <input type="text"  name="s3" class="form-control my-2" placeholder="Enter skill ">
+                     </li>
+                     <li>
+                         <input type="text"  name="s4" class="form-control my-2" placeholder="Enter skill ">
+                     </li>
+                 </ul>
+                 
+             </div>
+             <div>
+                 <h4 class="offset-1 pt-2" style="text-underline-position: under; color: #00838F; text-decoration:underline; text-decoration-thickness: 3px;"><b>INTERESTS</b></h4>
+             </div>
+             <div class="offset-1 py-2">
+                 <ul class="text-dark">
+                     <li>
+                         <input type="text"  name="h1" class="form-control my-2" placeholder="Enter interests">
+                     </li>
+                     <li>
+                         <input type="text"  name="h2" class="form-control my-2" placeholder="Enter interests">
+                     </li>
+                     <li>
+                         <input type="text"  name="h3" class="form-control my-2" placeholder="Enter interests">
+                     </li>
+                     <li>
+                         <input type="text"  name="h4" class="form-control my-2" placeholder="Enter interests">
+                     </li>
+                 </ul>
+                 
+             </div>
+             <div>
+                 <h4 class="offset-1 pt-2" style="text-underline-position: under; color: #00838F; text-decoration:underline; text-decoration-thickness: 3px;"><b>PROFILE PHOTO</b></h4>
+             </div>
+             <div class="offset-1 py-2">
+                 <input type="file" class="form-control my-2" name="img" required>
+             </div>
+             <h4 class="offset-1 pt-2" style="text-underline-position: under; color: #00838F; text-decoration:underline; text-decoration-thickness: 3px;"><b>CERTIFICATIONS</b></h4>
+             <div class="offset-1 py-2 col-5">
+                 <h6><i class="fa-solid fa-arrow-right"></i>&nbsp;Course-title</h6>
+                 <input type="text"  name="c1" class="form-control" placeholder="Enter project name">
+             </div>
+             <div class="offset-1 py-2">
+                 <h6><i class="fa-solid fa-arrow-right"></i>&nbsp;Course-description</h6>
+                 <textarea name="c1_desc" class="form-control" id="p1" cols="60" rows="3"></textarea>
+             </div>
+             <div class="offset-1 py-2 col-5">
+                 <h6><i class="fa-solid fa-arrow-right"></i>&nbsp;Course-title</h6>
+                 <input type="text"  name="c2" class="form-control" placeholder="Enter project name">
+             </div>
+             <div class="offset-1 py-2">
+                 <h6><i class="fa-solid fa-arrow-right"></i>&nbsp;Course-description</h6>
+                 <textarea name="c2_desc" class="form-control" id="p1" cols="60" rows="3"></textarea>
+             </div>
+             <div class="offset-1 py-2 col-5">
+                 <h6><i class="fa-solid fa-arrow-right"></i>&nbsp;Course-title</h6>
+                 <input type="text"  name="c3" class="form-control" placeholder="Enter project name">
+             </div>
+             <div class="offset-1 py-2">
+                 <h6><i class="fa-solid fa-arrow-right"></i>&nbsp;Course-description</h6>
+                 <textarea name="c3_desc" class="form-control" id="p1" cols="60" rows="3"></textarea>
+             </div>
+
+             
+         </div>
+         <div class="col-7">
+           <div>
+                 <h4 class="offset-1 pt-2" style="text-underline-position: under; color: #00838F; text-decoration:underline; text-decoration-thickness: 3px;"><b>PROJECTS</b></h4>
+             </div>
+             <div class="offset-1 py-2 col-5">
+                 <h6><i class="fa-solid fa-arrow-right"></i>&nbsp;Project-title</h6>
+                 <input type="text"  name="p1" class="form-control" placeholder="Enter project name">
+             </div>
+             <div class="offset-1 py-2">
+                 <h6><i class="fa-solid fa-arrow-right"></i>&nbsp;Project-description</h6>
+                 <textarea name="p1_desc" class="form-control" id="p1" cols="60" rows="5"></textarea>
+             </div>
+             <div class="offset-1 pt-2">
+                 <h6><i class="fa-solid fa-arrow-right"></i>&nbsp;Project completion Date</h6>
+                 
+             </div>
+             <div class="offset-1 py-2 col-4" style="display: flex;">
+                 <input type="date"  name="p1sdate" placeholder="Enter project name">
+                 &nbsp;&nbsp;&nbsp;&nbsp;
+                 <input type="date"  name="p1edate"  placeholder="Enter project name">
+             </div>
+             <div class="offset-1 py-2 col-5">
+                 <h6><i class="fa-solid fa-arrow-right"></i>&nbsp;Project-title</h6>
+                 <input type="text"  name="p2" class="form-control" placeholder="Enter project name">
+             </div>
+             <div class="offset-1 py-2">
+                 <h6><i class="fa-solid fa-arrow-right"></i>&nbsp;Project-description</h6>
+                 <textarea name="p2_desc" class="form-control" id="p2" cols="60" rows="5"></textarea>
+             </div>
+             <div class="offset-1 pt-2">
+                 <h6><i class="fa-solid fa-arrow-right"></i>&nbsp;Project completion Date</h6>
+                 
+             </div>
+             <div class="offset-1 py-2 col-4" style="display: flex;">
+                 <input type="date"  name="p2sdate"  placeholder="Enter project name">
+                 &nbsp;&nbsp;&nbsp;&nbsp;
+                 <input type="date"  name="p2edate"  placeholder="Enter project name">
+             </div>
+             <div class="offset-1 py-2 col-5">
+                 <h6><i class="fa-solid fa-arrow-right"></i>&nbsp;Project-title</h6>
+                 <input type="text"  name="p3" class="form-control" placeholder="Enter project name">
+             </div>
+             <div class="offset-1 py-2">
+                 <h6><i class="fa-solid fa-arrow-right"></i>&nbsp;Project-description</h6>
+                 <textarea name="p3_desc" class="form-control" id="p1" cols="60" rows="5"></textarea>
+             </div>
+             <div class="offset-1 pt-2">
+                 <h6><i class="fa-solid fa-arrow-right"></i>&nbsp;Project completion Date</h6>
+                 
+             </div>
+             <div class="offset-1 py-2 col-4" style="display: flex;">
+                 <input type="date"  name="p3sdate"  placeholder="Enter project name">
+                 &nbsp;&nbsp;&nbsp;&nbsp;
+                 <input type="date"  name="p3edate"  placeholder="Enter project name">
+             </div>
+             <div>
+                 <h4 class="offset-1 pt-2" style="text-underline-position: under; color: #00838F; text-decoration:underline; text-decoration-thickness: 3px;"><b>WORK EXPERIENCE</b></h4>
+             </div>
+             <div class="offset-1 py-2 col-5">
+                 <h6><i class="fa-solid fa-arrow-right"></i>&nbsp;Role-title</h6>
+                 <input type="text"  name="i1" class="form-control" placeholder="Enter role ">
+             </div>
+             <div class="offset-1 py-2">
+                 <h6><i class="fa-solid fa-arrow-right"></i>&nbsp;Company-work-description</h6>
+                 <textarea name="i1_desc" class="form-control" id="p1" cols="60" rows="5"></textarea>
+             </div>
+             <div class="offset-1 pt-2">
+                 <h6><i class="fa-solid fa-arrow-right"></i>&nbsp;Time Worked</h6>
+                 
+             </div>
+             <div class="offset-1 py-2 col-4" style="display: flex;">
+                 <input type="date"  name="i1sdate"  placeholder="Enter project name">
+                 &nbsp;&nbsp;&nbsp;&nbsp;
+                 <input type="date"  name="i1edate"  placeholder="Enter project name">
+             </div>
+            
+             <div class="offset-1 py-2 col-5">
+                 <h6><i class="fa-solid fa-arrow-right"></i>&nbsp;Role-title</h6>
+                 <input type="text"  name="i2" class="form-control" placeholder="Enter role ">
+             </div>
+             <div class="offset-1 py-2">
+                 <h6><i class="fa-solid fa-arrow-right"></i>&nbsp;Company-work-description</h6>
+                 <textarea name="i2_desc" class="form-control" id="p1" cols="60" rows="5"></textarea>
+             </div>
+             <div class="offset-1 pt-2">
+                 <h6><i class="fa-solid fa-arrow-right"></i>&nbsp;Time Worked</h6>
+                 
+             </div>
+             <div class="offset-1 py-2 col-4" style="display: flex;">
+                 <input type="date"  name="i2sdate" placeholder="Enter project name">
+                 &nbsp;&nbsp;&nbsp;&nbsp;
+                 <input type="date"  name="i2edate"  placeholder="Enter project name">
+             </div>
+             <div class="offset-1 py-2 col-5">
+                 <h6><i class="fa-solid fa-arrow-right"></i>&nbsp;Role-title</h6>
+                 <input type="text"  name="i3" class="form-control" placeholder="Enter role ">
+             </div>
+             <div class="offset-1 py-2">
+                 <h6><i class="fa-solid fa-arrow-right"></i>&nbsp;Company-work-description</h6>
+                 <textarea name="i3_desc" class="form-control" id="p1" cols="60" rows="5"></textarea>
+             </div>
+             <div class="offset-1 pt-2">
+                 <h6><i class="fa-solid fa-arrow-right"></i>&nbsp;Time Worked</h6>
+                 
+             </div>
+             <div class="offset-1 py-2 col-4" style="display: flex;">
+                 <input type="date"  name="i3sdate"  placeholder="Enter project name" >
+                 &nbsp;&nbsp;&nbsp;&nbsp;
+                 <input type="date"  name="i3edate"  placeholder="Enter project name">
+             </div>
+
+             <div class="offset-1 py-5 col-5">
+                 <input type="submit" class="btn btn-secondary" class="form-control" value="submit">
+             </div>
+
+
+         </div>
+         
+
+
+   
+     
+     </div>
+     </form>
+     
+ </div>
+ {% endblock  %}

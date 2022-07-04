@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Student</title>
+    {% load static %}
+
+<style>
+
+page {
+  background: white;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 0.5cm;
+  box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+}
+page[size="A4"] {  
+  width: 21cm;
+  height: 29.7cm; 
+}
+page[size="A4"][layout="portrait"] {
+  width: 29.7cm;
+  height: 21cm;  
+}
+@media print {
+  body, page {
+    margin: 0;
+    box-shadow: 0;
+  }
+}
+    
+</style>
+</head>
+<body>
+    <div class="container shadow-lg my-3 w-75">
+        <div class="row py-3 " style="background-color: #37474F;">
+            {%if data1.firstname or data1.lastname %}
+            <div class="offset-1 col-7 mt-5">
+                <h2 class=" text-light">{{data1.firstname}} {{data1.lastname}}</h2>
+            </div>
+            {%endif%}
+            <div class= "offset-2 col-2" >
+                <img src="{{data1.img.url}}"  height=150 width="150" class="rounded-circle border border-dark shadow-lg">
+            </div>
+        </div>
+        <div class="row py-3" style="background-color: #263238;">
+            
+            <div class="offset-1 col-4">
+                <a href="{{data1.mail}}" class="fa-solid fa-envelope link-light fa-lg my-3" style="text-decoration: none;"></a>&nbsp;&nbsp;<a href="{{data1.github}}" style="text-decoration: none;" class="link-light">{{data1.mail}}</a><br>
+                <a href="{{data1.phoneno}}" class="fa-solid fa-mobile link-light fa-lg mb-3" style="text-decoration: none;"></a>&nbsp;&nbsp;<a href="{{data1.phoneno}}" class="link-light" style="text-decoration: none;">{{data1.phoneno}}</a><br>
+            </div>
+            <div class="offset-2 col-4">
+                <a href="{{data1.linkedln}}" class="fa-brands fa-linkedin link-light fa-lg my-3" style="text-decoration: none;"></a>&nbsp;&nbsp;<a href="#" style="text-decoration: none;" class="link-light">{{data1.linkedln}}</a><br>
+                {% if data1.github%}
+                <a href="{{data1.github}}" class="fa-brands fa-github link-light fa-lg mb-3" style="text-decoration: none;"></a>&nbsp;&nbsp;<a href="#" style="text-decoration: none;" class="link-light">{{data1.github}}</a><br>
+                {% endif %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div>
+                    <h5 class="offset-2 pt-2" style="text-underline-position: under; color: #00838F; text-decoration:underline; text-decoration-thickness: 3px;"><b>EDUCATION</b></h5>
+                </div>
+                <div>
+                    <h5 class="offset-2 pt-2" style="font-weight: bold;">{{data1.degree_Specialization}}</h5>
+                    <h6 class="offset-2">{{data1.degree}}</h6>
+                    <h7 class="offset-2 text-success">{{data1.degree_start}}&nbsp;-&nbsp;{{data1.degree_end}}</h7>
+                </div>
+                <div>
+                    <h5 class="offset-2 pt-2" style="font-weight: bold;">Intermediate</h5>
+                    <h6 class="offset-2">{{data1.inter1}}</h6>
+                    <h7 class="offset-2 text-success">{{data1.inter1_start}}&nbsp;-&nbsp;{{data1.inter1_end}}</h7>
+                </div>
+                <div>
+                    <h5 class="offset-2 pt-2" style="font-weight: bold;">Secondary</h5>
+                    <h6 class="offset-2">{{data1.s1}}</h6>
+                    <h7 class="offset-2 text-success">{{data1.s1_date}}</h7>
+                </div>
+                {% if data1.p1 or data1.p2 or data1.p3 %}
+                <div>
+                    <h5 class="offset-2 pt-4" style="text-underline-position: under; color: #00838F; text-decoration:underline; text-decoration-thickness: 3px;"><b>PERSONAL PROJECTS</b></h5>
+                </div>
+                {% if data1.p1 %}
+                <div>
+                    <h5 class="offset-2 pt-2" style="font-weight: bold;">{{data1.p1}}</h5>
+                    <h6 class="offset-2 justify-content-left" style="font-weight: lighter;">
+                    {{data1.p1_desc}}                                           
+                    </h6>
+                    <h7 class="offset-2 text-success">{{data1.p1_startdate}}&nbsp;-&nbsp;{{data1.p1_enddate}}</h7>
+                </div>
+                {% endif %}
+                {% if data1.p2 %}
+                <div>
+                    <h5 class="offset-2 pt-2" style="font-weight: bold;">{{data1.p2}}</h5>
+                    <h6 class="offset-2 justify-content-left" style="font-weight: lighter;">
+                    {{data1.p2_desc}}                                           
+                    </h6>
+                    <h7 class="offset-2 text-success">{{data1.p2_startdate}}&nbsp;-&nbsp;{{data1.p2_enddate}}</h7>
+                </div>
+                {% endif %}
+                {% if data1.p3 %}
+                <div class="pb-3">
+                    <h5 class="offset-2 pt-2" style="font-weight: bold;">{{data1.p3}}</h5>
+                    <h6 class="offset-2 justify-content-left" style="font-weight: lighter;">
+                    {{data1.p3_desc}}                                           
+                    </h6>
+                    <h7 class="offset-2 text-success">{{data1.p3_startdate}}&nbsp;-&nbsp;{{data1.p3_enddate}}</h7>
+                </div>
+                {% endif %}
+                {% endif %}
+
+
+            </div>
+            <div class="col-6">
+                {% if data1.i1 or data1.i2 or data1.i3 %}
+                <div>
+                    <h5 class="offset-2 pt-2" style="text-underline-position: under; color: #00838F; text-decoration:underline; text-decoration-thickness: 3px;"><b>WORK EXPERIENCE</b></h5>
+                </div>
+                {% if data1.i1 %}
+                <div>
+                    <h5 class="offset-2 pt-2" style="font-weight: bold;">{{data1.i1}}</h5>
+                    <h6 class="offset-2 justify-content-left" style="font-weight: lighter;">
+                    {{data1.i1_desc}}                                           
+                    </h6>
+                    <h7 class="offset-2 text-success">{{data1.i1_startdate}}&nbsp;-&nbsp;{{data1.i1_enddate}}</h7>
+                </div>
+                {% endif %}
+                {% if data1.i2 %}
+                <div>
+                    <h5 class="offset-2 pt-2" style="font-weight: bold;">{{data1.i2}}</h5>
+                    <h6 class="offset-2 justify-content-left" style="font-weight: lighter;">
+                    {{data1.i2_desc}}                                           
+                    </h6>
+                    <h7 class="offset-2 text-success">{{data1.i2_startdate}}&nbsp;-&nbsp;{{data1.i2_enddate}}</h7>
+                </div>
+                {% endif %}
+                {% if data1.i3 %}
+                <div class="py-2">
+                    <h5 class="offset-2 pt-2" style="font-weight: bold;">{{data1.i3}}</h5>
+                    <h6 class="offset-2 justify-content-left" style="font-weight: lighter;">
+                    {{data1.i3_desc}}                                           
+                    </h6>
+                    <h7 class="offset-2 text-success">{{data1.i3_startdate}}&nbsp;-&nbsp;{{data1.i3_enddate}}</h7>
+                </div>
+                {% endif %}
+                {% endif %}
+                {% if data1.c1 or data1.c2 or data1.c3 %}
+                <div>
+                    <h5 class="offset-2 pt-2" style="text-underline-position: under; color: #00838F; text-decoration:underline; text-decoration-thickness: 3px;"><b>CERTIFICATIONS</b></h5>
+                </div>
+                {% if data1.c1 %}
+                <div>
+                    <h5 class="offset-2 pt-2" style="font-weight: bold;">{{data1.c1}}</h5>
+                    <h6 class="offset-2 justify-content-left" style="font-weight: lighter;">
+                    {{data1.c1_desc}}                                           
+                    </h6>
+                </div>
+                {% endif %}
+                {% if data1.c2 %}
+                <div>
+                    <h5 class="offset-2 pt-2" style="font-weight: bold;">{{data1.c2}}</h5>
+                    <h6 class="offset-2 justify-content-left" style="font-weight: lighter;">
+                    {{data1.c2_desc}}                                           
+                    </h6>
+                </div>
+                {% endif %}
+                {% if data1.c3 %}
+                <div>
+                    <h5 class="offset-2 pt-2" style="font-weight: bold;">{{data1.c3}}</h5>
+                    <h6 class="offset-2 justify-content-left" style="font-weight: lighter;">
+                    {{data1.c3_desc}}                                           
+                    </h6>
+                </div>
+                {% endif %}
+                {% endif %}
+                {%if data1.skills1 or data1.skills2 or data1.skills3 or data1.skills4 %}
+                <div>
+                    <h5 class="offset-2 pt-4" style="text-underline-position: under; color: #00838F; text-decoration:underline; text-decoration-thickness: 3px;"><b>SKILLS</b></h5>
+                </div>
+                   <ul class="offset-2 text-dark pt-3" style="text-decoration: none; display: flex;">
+                    {%if data1.skills1%}
+                        <h6 class="bg-warning" style="list-style: none; background-color: lightgreen; border-radius: 5px; background-size: 30px;"><li>&nbsp;{{data1.skills1}}&nbsp;</li></h6>&nbsp; &nbsp;
+                    {% endif %}
+                    {%if data1.skills2%}
+                        <h6 class="bg-warning" style="list-style: none; background-color: lightgreen; border-radius: 5px;"><li>&nbsp;{{data1.skills2}}&nbsp;</li></h6>&nbsp; &nbsp;
+                    {% endif %}
+                    {%if data1.skills3%}    
+                        <h6 class="bg-warning" style="list-style: none; background-color: lightgreen; border-radius: 5px;"><li>&nbsp;{{data1.skills3}}&nbsp;</li></h6>&nbsp; &nbsp;
+                    {% endif %}
+                        {%if data1.skills4%}    
+                        <h6 class="bg-warning" style="list-style: none; background-color: lightgreen; border-radius: 5px;"><li>&nbsp;{{data1.skills4}}&nbsp;</li></h6>
+                        {% endif %}
+                    </ul>
+                {% endif %}
+                {%if data1.hobbies1 or data1.hobbies2 or data1.hobbies3 or data1.hobbies4 %}
+                    <div>
+                        <h5 class="offset-2 pt-1" style="text-underline-position: under; color: #00838F; text-decoration:underline; text-decoration-thickness: 3px;"><b>INTERESTS</b></h5>
+                    </div>
+                   
+                        <ul class="offset-2 text-dark py-3 pb-5 " style="list-style-type: circle;">
+                            {%if data1.hobbies1%}   
+                            <h6><li>{{data1.hobbies1}}</li></h6>
+                            {% endif %}
+                            {%if data1.hobbies2%} 
+                            <h6><li>{{data1.hobbies2}}</li></h6>
+                            {% endif %}
+                            {%if data1.hobbies3%}   
+                            <h6><li>{{data1.hobbies3}}</li></h6>
+                            {% endif %}
+                            {%if data1.%}hobbies4%}
+                            <h6><li>{{data1.hobbies4}}</li></h6>
+                            {% endif %}
+                        </ul>
+                    {% endif %}
+            </div>
+
+        </div>
+
+    </div>
+</body>
+</html>
