@@ -34,6 +34,15 @@ A simple Web based tool that will allow you to create a perfect resume by enteri
 ###
 ![image](https://user-images.githubusercontent.com/82018964/195126229-40c09b67-1c3c-468f-8fdd-e26e96554b1a.png)
 
+###
+### Contact info :
+- Amaan smd : amaansmd9@gmail.com
+
+### Source:
+- https://www.djangoproject.com/
+- https://www.w3schools.com/django/
+
+
 
 
 
