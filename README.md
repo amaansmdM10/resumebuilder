@@ -30,5 +30,10 @@ A simple Web based tool that will allow you to create a perfect resume by enteri
 
 ![image](https://user-images.githubusercontent.com/82018964/195125073-6acbd114-0675-4d72-916c-d2c14beb2b01.png)
 
+## After Submit click on view resumes:
+###
+![image](https://user-images.githubusercontent.com/82018964/195126229-40c09b67-1c3c-468f-8fdd-e26e96554b1a.png)
+
+
 
 
