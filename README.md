@@ -15,8 +15,23 @@ A simple Web based tool that will allow you to create a perfect resume by enteri
 - Add specific options of user choice.
 
 ## GUI Of the website :
-![image](resume.png)
+
+![image](https://user-images.githubusercontent.com/82018964/195122328-fd0d2ffc-5acb-405f-9e3c-7693798145ae.png)
+
 ### 
-![image](https://user-images.githubusercontent.com/82018964/153717852-4ef47d49-b1cc-4a44-bfb4-9b73b03287f9.png)
+![image](https://user-images.githubusercontent.com/82018964/195122741-4518870b-b5d6-4e86-bcf8-8a8494eeed38.png)
+
+###
+![image](https://user-images.githubusercontent.com/82018964/195124363-efa310c6-009e-40ba-927f-0fd3f4c5148d.png)
+
+###
+![image](https://user-images.githubusercontent.com/82018964/195124501-41b25abe-4fb8-42f1-ab33-fc10190e3ec8.png)
+
+###
+![image](https://user-images.githubusercontent.com/82018964/195124734-d3481886-9928-4ac2-9085-3b50da736872.png)
+![image](https://user-images.githubusercontent.com/82018964/195124903-0285de49-a42e-4fc4-b4a3-5522c5e11884.png)
+![image](https://user-images.githubusercontent.com/82018964/195124975-7e2f7bc2-5afa-461d-a814-fc73f3b6410b.png)
+![image](https://user-images.githubusercontent.com/82018964/195125073-6acbd114-0675-4d72-916c-d2c14beb2b01.png)
+
 
 
