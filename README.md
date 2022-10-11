@@ -22,10 +22,7 @@ A simple Web based tool that will allow you to create a perfect resume by enteri
 ![image](https://user-images.githubusercontent.com/82018964/195122741-4518870b-b5d6-4e86-bcf8-8a8494eeed38.png)
 
 ###
-![image](https://user-images.githubusercontent.com/82018964/195124363-efa310c6-009e-40ba-927f-0fd3f4c5148d.png)
-
-###
-![image](https://user-images.githubusercontent.com/82018964/195124501-41b25abe-4fb8-42f1-ab33-fc10190e3ec8.png)
+![image](https://user-images.githubusercontent.com/82018964/195125880-42825ab0-af73-4e4c-8198-b4252fa81c13.png)
 
 ## Click on Add resume:
 ###
